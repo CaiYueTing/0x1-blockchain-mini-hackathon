@@ -41,9 +41,8 @@ contract gambal {
     Question[] poolQuestion;
     Player[] poolPlayer;
     
-    function getQuestion(uint index)public constant returns(string){
-        Question Q = poolQuestion[index];
-        return Q._q;
+    function getQuestion(uint index)public returns(string){
+        return poolQuestion[index]._q;
     }
     
     

@@ -48,13 +48,13 @@ contract gambal {
     
     
     function setQuestion(string q)public {
-        Question QUE;
-        QUE._q = q;
-        QUE._answer.push(true);
-        QUE._answer.push(false);
-        QUE._oddds.push(1);
-        QUE._oddds.push(2);
-        poolQuestion.push(QUE);
+        poolQuestion.length ++;
+        uint index = poolQuestion.length-1;
+        poolQuestion[index]._q = q;
+        poolQuestion[index]._answer.push(true);
+        poolQuestion[index]._answer.push(false);
+        poolQuestion[index]._oddds.push(1);
+        poolQuestion[index]._oddds.push(2);
     }
     
     function setOdds(uint index, uint odd1, uint odd2) onlyOwner public {

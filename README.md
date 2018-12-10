@@ -2,7 +2,8 @@
 
 ## This is my first smart contract with solidity
 
-my problem (had been solved)
+I wanted to create a DB like NoSQL in solidity.      
+And I meet some interesting problem.
 
 <pre>
 // global variable
@@ -39,7 +40,7 @@ function getQuestion(uint index)public returns(string){
 }
 </pre>
 
-The array struct is needed to add length by itself.
+The array struct is needed to add length by itself.   
 And the problem had been solved.
 
 <pre>

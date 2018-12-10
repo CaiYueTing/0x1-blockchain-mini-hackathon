@@ -18,7 +18,7 @@ struct Question{
 Question[] poolQuestion;
 </pre>
 
-There was problem when I pushed a struct to struct array.
+There was problem when I pushed a struct to array struct.
 
 <pre>
 function setQuestion(string q) public {

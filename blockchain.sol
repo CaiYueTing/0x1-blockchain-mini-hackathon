@@ -8,6 +8,7 @@ pragma solidity ^0.4.24;
  * `ERC20` functions.
  */
 
+
 contract gambal {
     
     // mapping (uint => string) public strings;
@@ -22,6 +23,7 @@ contract gambal {
         _;
     }
     
+    
     struct Question{
         string _q;
         bool[] _answer;
@@ -29,7 +31,7 @@ contract gambal {
         bool _solve;
         uint _solanswer;
     }
-    
+        
     struct Player {
         address _player;
         uint _q;
@@ -37,9 +39,11 @@ contract gambal {
         uint _money;
         uint _odds;
     }
-    
+
     Question[] poolQuestion;
-    Player[] poolPlayer;
+    Player[] poolPlayer;    
+
+    string[] test;
     
     function getQuestion(uint index)public returns(string){
         return poolQuestion[index]._q;
@@ -89,16 +93,22 @@ contract gambal {
     }
     
     function play(uint q, uint a, uint m) public returns(bool){
-        address user = msg.sender;
-        Player userp;
-        userp._player = user;
-        userp._q = q;
-        userp._answer = a;
-        userp._money =m;
+        address user = msg.sender; // it is work
+        poolPlayer.length++;
+        uint index = poolPlayer.length-1;
+        poolPlayer[index]._player = user;
+        poolPlayer[index]._q = q;
+        poolPlayer[index]._answer = a;
+        poolPlayer[index]._money =m;
         uint odds  = getOdds(q,a);
-        userp._odds = odds;
-        poolPlayer.push(userp);
+        poolPlayer[index]._odds = odds;
+        // it is not work origin code
+        // Player userp; 
+        // userp._player = user;
+        // userp._q = q;
+        // userp._answer = a;
+        // userp._money =m;
+        // userp._odds = odds;
+        // poolPlayer.push(userp);
     }
-
-    
 }
